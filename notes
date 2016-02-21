@@ -1,0 +1,9 @@
+        // https://api.tfl.gov.uk/
+        // Transport modes: https://api.tfl.gov.uk/Line/Meta/Modes
+        // Line modes: https://api.tfl.gov.uk/Line/Mode/tube
+        // Search Station: https://api.tfl.gov.uk/StopPoint/Search/Gallions%20Reach
+        // station departure board (per station): https://api.tfl.gov.uk/StopPoint/940GZZDLGAL/Arrivals
+        // Station departure board (per line): https://api.tfl.gov.uk/Line/dlr/Arrivals
+        // Stop Points per line: https://api.tfl.gov.uk/Line/victoria/StopPoints
+        // List of lines: https://api.tfl.gov.uk/Line/Mode/tube,dlr
+        // Service Status: https://api.tfl.gov.uk/Line/Mode/tube,dlr/Status?detail=False
