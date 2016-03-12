@@ -35,12 +35,32 @@
 </head>
 
 <body>
+    
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="container">
+            <a href="javascript:void(0);" onclick="pageBack('lines');" id="breadcrumb1" header col s12 light>Lines</a>
+            <a href="javascript:void(0);" onclick="pageBack('stations');" id="breadcrumb2" header col s12 light></a>
+            <a id="breadcrumb3" header col s12 light></a>
+            <h5 id="logo" class="right">TFL now.org</h5>
+        </div> 
+    </nav>
+    
+    <br/><br/><br/>
+    
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <div id="bodyContainer">
+                <div id="lines" class="collection"></div>
+                <div id="stations" class="collection"></div>
+                <div id="arrivals"></div>
+            </div>
+        </div>
+    </div>
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript">
-        
-        // everything?? https://api.tfl.gov.uk/Line/Route
         
         var id = "?app_id=4e53c8f0&app_key=6643b05c685d814e919c76c4484c530e";
         var refreshID;
@@ -113,7 +133,7 @@
                 $("span:contains('Good Service')").css("box-shadow", "1px 1px 2px green");
                 $("span:contains('Minor Delays')").css("box-shadow", "1px 1px 2px orange");
                 $("span:contains('Service Closed')").css("box-shadow", "1px 1px 2px red");
-                
+
                 lineIdNameArray[element.id] = element.name;
                 });  
             breadcrumbs("lines", null);
@@ -152,15 +172,6 @@
         }
 
         // debugging tools -------------------------------------------
-
-        // example call console.log(nodeToString($('#arrivals')[0]));
-        function nodeToString(node) {
-            var tmpNode = document.createElement("div");
-            tmpNode.appendChild(node.cloneNode(true));
-            var str = tmpNode.innerHTML;
-            tmpNode = node = null; // prevent memory leaks in IE
-            return str;
-        }
         
         function sortByKey(array, key) {
             return array.sort(function(a, b) {
@@ -172,8 +183,6 @@
         //-------------------------------------------------------------
         
         function breadcrumbs(newView, viewName){
-            
-            //console.log("current:" + breadcrumbArray.indexOf(activeViewBreadcrumb) + " | " + "about:" + breadcrumbArray.indexOf(newView));
             
             activeViewBreadcrumb = newView;
             
@@ -226,13 +235,14 @@
                 $('#arrivals').click(function(data){
             });   
         });
-        
+        /*
         $(function() {
             var availableTags = ["Bakerloo","Central","Circle","District","DLR","Hammersmith & City","Jubilee","Metropolitan","Northern","Piccadilly","Victoria","Waterloo & City"];//stationIdNameArray;
             $( "#search" ).autocomplete({
                 source: availableTags
             });
         });
+        
   
   function searchFocus(){
       $('#bodyContainer').css("opacity", "0")
@@ -241,48 +251,8 @@
   function searchBlur(){
       $('#bodyContainer').css("opacity", "1.0")
   }
+  */
         
-    </script>
-
-<nav class="light-blue lighten-1" role="navigation">
-    
-        <div class="container">
-            <a href="javascript:void(0);" onclick="pageBack('lines');" id="breadcrumb1" header col s12 light>Lines</a>
-            <a href="javascript:void(0);" onclick="pageBack('stations');" id="breadcrumb2" header col s12 light></a>
-            <a id="breadcrumb3" header col s12 light></a>
-            <h5 id="logo" class="right">TFL now.org</h5>
-        </div> 
-        
-</nav>
-<br/><br/><br/>
-<div class="section no-pad-bot" id="index-banner">
-  
-    <div class="container">
-<!--
-        <nav>
-            <div class="nav-wrapper">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" onfocus="searchFocus();" onblur="searchBlur();" required>
-                        <label for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </div>
-        </nav>
--->    
-        <div id="bodyContainer">
-      
-            <div id="lines" class="collection"></div>
-            <div id="stations" class="collection"></div>
-            <div id="arrivals"></div>
-
-        </div>
-
-    </div>
-</div>
-
-
-</body>
-
+        </script>
+    </body>
 </html>
